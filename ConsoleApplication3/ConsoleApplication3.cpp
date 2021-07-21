@@ -1,6 +1,7 @@
 #include <iostream>
 #include <string>
 #include <vector>
+#include <fstream>
 
 using namespace std;
 
@@ -13,7 +14,21 @@ struct ShowParam
 bool start();
 string communicate();
 vector<string> read(string);
-ShowParam getShowParam(const vector<string>&);
+ShowParam getShowParam(const vector<string>& vstr)
+{
+	ShowParam sp;
+	int strCount = vstr.size();
+	cout << "You have " << strCount << " lines" << endl;
+	cout << "Enter start line ", cin >> sp.startLine;
+	cout << "Enter end line ", cin >> sp.endLine;
+	if (sp.startLine > strCount || sp.endLine > strCount)
+	{
+		cout << "Eror" << endl;
+		getShowParam(vstr);
+	}
+	
+
+};
 void show(const vector<string>&, const ShowParam&);
 void endScreen();
 
