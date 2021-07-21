@@ -15,7 +15,7 @@ string communicate();
 vector<string> read(string);
 ShowParam getShowParam(const vector<string>&);
 void show(const vector<string>&, const ShowParam&);
-void endScreen();
+void endScreen() {std::cout << "Thank you for your cooperation guys\n";}
 
 int main()
 {
