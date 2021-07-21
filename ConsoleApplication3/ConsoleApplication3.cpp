@@ -1,6 +1,7 @@
 #include <iostream>
 #include <string>
 #include <vector>
+#include <fstream>
 
 using namespace std;
 
@@ -16,6 +17,26 @@ vector<string> read(string);
 ShowParam getShowParam(const vector<string>&);
 void show(const vector<string>&, const ShowParam&);
 void endScreen();
+
+vector<string> read(string path)
+{
+	ifstream iFile;
+	iFile.open(path);
+
+	vector<string> arr;
+
+	while (!iFile.eof())
+	{
+		string tmp;
+		getline(iFile, tmp);
+		arr.push_back(tmp);
+	}
+
+
+	iFile.close();
+
+	return arr;
+}
 
 int main()
 {
