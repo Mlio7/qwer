@@ -27,7 +27,7 @@ ShowParam getShowParam(const vector<string>& vstr)
 		getShowParam(vstr);
 	}
 	
-
+	return sp;
 };
 void show(const vector<string>&, const ShowParam&);
 void endScreen();
