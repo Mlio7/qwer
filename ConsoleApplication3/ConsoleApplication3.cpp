@@ -11,7 +11,7 @@ struct ShowParam
 };
 
 bool start();
-string comunicate();
+string communicate();
 vector<string> read(string);
 ShowParam getShowParam(const vector<string>&);
 void show(const vector<string>&, const ShowParam&);
@@ -22,7 +22,7 @@ int main()
 	
 	if (start()) 
 	{
-		auto fileName = comunicate();
+		auto fileName = communicate();
 		auto content = read(fileName);
 		auto sp = getShowParam(content);
 		show(content, sp);
